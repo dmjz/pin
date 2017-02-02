@@ -1,0 +1,34 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+.row {
+	vertical-align: middle;
+}
+.col-xs-4 {
+	text-align: center;
+}
+.navbar {
+	margin: 0px;
+}
+h1 {
+	font-size: 8rem;
+}
+.title {
+	text-align: center;
+}
+.heading {
+	margin: 5% 0 5% 5%;
+	font-size: 6rem;
+}
+form {
+	margin-left: 5%;
+}
+button {
+	margin-top: 2%;
+}
+#login { 
+	margin-right: 2%;
+}
+.login-show, .login-hide {
+	display: none;
+}

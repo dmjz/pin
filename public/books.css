@@ -1,0 +1,45 @@
+body {
+	font-family: 'Roboto', sans-serif;
+}
+.row {
+	vertical-align: middle;
+}
+.col-xs-4 {
+	text-align: center;
+}
+.jumbotron {
+	background-color: #aaa;
+	margin: 0px;
+}
+.navbar {
+	margin: 0px;
+}
+h1 {
+	font-size: 8rem;
+}
+.title {
+	text-align: center;
+}
+.heading {
+	margin: 5% 0 5% 5%;
+	font-size: 6rem;
+}
+.thumbnail-box {
+	width: 120px;
+	height: 200px;
+	display: inline-block;
+	margin: 5px;
+}
+.thumbnail-box img {
+	height: auto;
+	width: 100%;
+}
+#gallery-row {
+	padding-left: 20px;
+}
+.popover {
+	text-align: center;
+}
+.login-show, .login-hide, .book-cover {
+	display: none;
+}

@@ -1,7 +1,7 @@
 {
-  "name": "stocks-djmot",
+  "name": "books-djmot",
   "version": "1.0.0",
-  "description": "A stock charting app for freecodecamp",
+  "description": "A book trading app for freecodecamp",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,6 +10,9 @@
   "author": "David Mason",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.22",
+    "mongoose": "^4.7.8"
   }
 }
