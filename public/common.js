@@ -2,7 +2,7 @@
 'use strict';
 
 
-var appUrl = 'https://pin-djmot-djmot.c9users.io/';
+var appUrl = 'https://pin-djmot.herokuapp.com/';
 var placeholderUrl = 'https://image.shutterstock.com/z/stock-vector-question-mark-sign-icon-vector-illustration-flat-design-style-283663211.jpg'
 var imgSrc;
 var globalMode;
