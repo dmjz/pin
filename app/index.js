@@ -1,97 +1,85 @@
 'use strict';
 
 var path = process.cwd();
-var UserHandler = require(path + '/app/userHandler.js');
+var DbHandler = require(path + '/app/dbHandler.js');
 
-module.exports = function (app) {
+module.exports = function (app, passport, upload) {
     
-    var userHandler = new UserHandler();
+    function isLoggedIn (req, res, next) {
+        if (req.isAuthenticated()) { return next(); }
+        else { res.redirect('/public/login.html'); }
+    }
+    
+    var dbHandler = new DbHandler();
+        
     
     /*
-        Just file serving
+        Authentication/login-logout
+    */
+    app.route('/auth/twitter')
+		.get(passport.authenticate('twitter'));
+	app.route('/auth/twitter/callback')
+		.get(passport.authenticate('twitter', {
+			successRedirect: '/',
+			failureRedirect: '/'
+		}));
+	app.route('/logout')
+		.get(function (req, res) {
+			req.logout();
+			res.redirect('/');
+		});
+		
+		
+	/*
+        File serving
     */
     app.route('/')
-        .get(function (req, res) {
+        .get(isLoggedIn, function (req, res) {
             res.sendFile(path + '/public/home.html');
         });
-    app.route('/books')
-        .get(function (req, res) {
-            res.sendFile(path + '/public/books.html');
-        });
     app.route('/profile')
-        .get(function (req, res) {
+        .get(isLoggedIn, function (req, res) {
             res.sendFile(path + '/public/profile.html');
         });
-    app.route('/login')
-        .get(function (req, res) {
-            res.sendFile(path + '/public/login.html');
-        });
-    app.route('/signup')
-        .get(function (req, res) {
-            res.sendFile(path + '/public/signup.html');
-        });
-    app.route('/trade')
-        .get(function (req, res) {
-            res.sendFile(path + '/public/trade.html');
-        });
-    app.route('/mybooks')
-        .get(function (req, res) {
-            res.sendFile(path + '/public/mybooks.html');
+    app.route('/public')
+        .get(isLoggedIn, function (req, res) {
+            res.sendFile(path + '/public/public.html');
         });
         
+        
     /*
-        User API
+        Api
     */
-    app.route('/user/add')
-        .post(function (req, res) {
-            userHandler.addUser(req, res);
+    app.route('/user/me')
+        .get(isLoggedIn, function(req, res) {
+            dbHandler.getUserMe(req, res);
         });
-    app.route('/user/login')
-        .post(function (req, res) {
-            userHandler.login(req, res);
+    app.route('/user/pins')
+        .get(isLoggedIn, function(req, res) {
+            dbHandler.getUserPins(req, res);
         });
-    app.route('/user/get')
-        .post(function (req, res) {
-            userHandler.getUser(req, res);
+    app.route('/pin/upload')
+        .post(isLoggedIn, upload.single('image'), function (req, res) {
+            dbHandler.handleUpload(req, res);
         });
-    app.route('/user/searchusers')
-        .post(function (req, res) {
-            userHandler.searchUsers(req, res);
+    app.route('/pin/all')
+        .get(isLoggedIn, function(req, res) {
+            dbHandler.getAllPins(req, res);
         });
-    app.route('/user/update')
-        .post(function (req, res) {
-            userHandler.saveSettings(req, res);
+    app.route('/pin/user')
+        .get(isLoggedIn, function (req, res) {
+            dbHandler.getPins(req, res);
         });
-    app.route('/user/newbook')
-        .post(function (req, res) {
-            userHandler.newBook(req, res);
+    app.route('/pin/like')
+        .post(isLoggedIn, function (req, res) {
+            dbHandler.likePin(req, res);
         });
-    app.route('/user/addbook')
-        .post(function (req, res) {
-            userHandler.addBook(req, res);
+    app.route('/pin/unlike')
+        .post(isLoggedIn, function (req, res) {
+            dbHandler.unlikePin(req, res);
         });
-    app.route('/user/removebook')
-        .post(function (req, res) {
-            userHandler.removeBook(req, res);
-        });
-    app.route('/user/searchbooks')
-        .post(function (req, res) {
-            userHandler.searchBooks(req, res);
-        });
-    app.route('/user/allbooks')
-        .post(function (req, res) {
-            userHandler.allBooks(req, res);
-        });
-    app.route('/user/addtrade')
-        .post(function (req, res) {
-            userHandler.addTrade(req, res);
-        });
-    app.route('/user/removetrade')
-        .post(function (req, res) {
-            userHandler.removeTrade(req, res);
-        });
-    app.route('/user/processtrade')
-        .post(function (req, res) {
-            userHandler.processTrade(req, res);
+    app.route('/pin/delete')
+        .get(isLoggedIn, function (req, res) {
+            dbHandler.deletePin(req, res);
         });
 };

@@ -2,60 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>books-djmot</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="/public/login.css" type="text/css">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" ></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" ></script>
-        <script type="text/javascript" src="/public/cookies.js" ></script>
-        <script type="text/javascript" src="/public/login.js" ></script>
+        <title>Login</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="/public/main.css" type="text/css">
     </head>
     <body>
-        
-    <nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#things-to-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-		</div>
-		<div class="collapse navbar-collapse" id="things-to-collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="/">Home</a></li>
-				<li><a href="/books">All Books</a></li>
-			</ul>
-			<ul class="nav navbar-nav login-show">
-				<li><a href="/profile">My Profile</a></li>
-				<li><a href="/mybooks">My Books</a></li>
-				<li><a href="/trade">Trade</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right login-hide">
-				<li><a href="/signup">Sign up</a></li>
-				<li><a href="/login">Log in</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right login-show">
-				<li><a id="logout" href="#">Log out</a></a></li>
-			</ul>
-		</div>
-	</nav>
-
-    <div class="container-fluid">
-    	<h2 class="heading">Log in</h2>
-    	<form>
-    		<div class="form-group">
-    			<label for="user">Username</label>
-    			<input id="user" type="text" class="form-control">
-    		</div>
-    		<div class="form-group">
-    			<label for="pass">Password</label>
-    			<input id="pass" type="password" class="form-control">
-    		</div>
-    		<button id="login" type="button" class="btn btn-success">Log in</button>
-    		<button id="signup" type="button" class="btn btn-default">Sign up</button>
-    	</form>
-    </div>
-        
+        <div class="login-box">
+        	<h1>Welcome to pin-djmot</h1>
+        	<a href="/auth/twitter">
+        		<button type="button" class="btn btn-primary btn-lg login-button">Log in with Twitter</button>
+        	</a>
+        </div>
     </body>
 </html>

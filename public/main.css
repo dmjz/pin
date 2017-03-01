@@ -1,0 +1,154 @@
+/* Navbar ---------------------------------------*/
+.nav-brand {
+	font-size: 3rem;
+	margin: 0.5rem;
+	font-weight: bold;
+	color: #000;
+	float: left!important;
+}
+.navbar-nav>li, .navbar-nav {
+  float: left !important;
+}
+.navbar-right {
+  float: right!important;
+}
+.logout {
+	margin-top: 5px;
+	margin-right: 10px;
+}
+
+
+
+/* Login page -----------------------------------*/
+.login-box {
+	background-color: #eee;
+	padding: 20px;
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 10px #ccc;
+	border-radius: 4px;
+	border: 1px solid black;
+}
+.login-button {
+	margin: 20px 0px 20px 0px;
+}
+
+
+
+/* Grid, Pins -----------------------------------*/
+.grid-sizer, .grid-item {
+	width: 25%;
+}
+.grid-item-inner {
+	background-color: #ccc;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	width: 98%;
+	overflow: hidden;
+}
+.pin-img {
+	height: auto;
+	width: 96%;
+	margin-top: 2%;
+	margin-left: 2%;
+	cursor: pointer;
+}
+.pin-row {
+	padding: 2% 4% 10% 4%;
+	user-select: none;
+	font-size: 1.7rem;
+}
+.like-box {
+	float: right;
+}
+.owner-box {
+	float: left;
+	color: #222;
+	cursor: pointer;
+}
+.owner-box:hover {
+	color: #666;
+}
+.owner-box:active {
+	color: #eee;
+}
+.like-button {
+	margin-right: 4px;
+	cursor: pointer;
+	color: #222;
+}
+.like-button:hover {
+	color: #666;
+	text-decoration: none;
+}
+.like-button:active {
+	color: #eee;
+}
+.liked {
+	color: #ed2a2a;
+}
+.liked:hover {
+	color: #f15b5b;
+}
+.liked:active {
+	color: #eee;
+}
+.delete-button {
+	cursor: pointer;
+}
+.delete-button:hover {
+	color: #666;
+}
+.delete-button:active {
+	color: #eee;
+}
+.no-show {
+	display: none;
+}
+
+
+
+/* Upload stuff ---------------------------------*/
+#plus-button {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	z-index: 100;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 60px;
+	padding-top: 2px;
+	font-size: 3rem;
+	color: #000;
+	background-color: #6f6;
+	display: inline-block;
+	box-shadow: 0px 0px 10px #222;
+	cursor: pointer;
+}
+#plus-button:hover {
+	color: #555;
+	background-color: #7f7;
+}
+#plus-button:active {
+	color: #aaa;
+	background-color: #9f9;
+}
+#image-target {
+	/*max-width: 200px;
+	max-height: 200px;*/
+}
+#image-upload {
+	margin-top: 10px;
+}
+.input-image {
+	max-width: 400px;
+	height: auto;
+	max-height: 400px;
+	margin-bottom: 10px;
+}
