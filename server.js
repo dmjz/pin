@@ -12,7 +12,7 @@ var app = express();
 require('dotenv').load();
 require('./app/config/passport')(passport);
 
-mongoose.connect('mongodb://' + process.env.IP + '/pin', function (err) {
+mongoose.connect(process.env.MONGO_URI, function (err) {
     if (err) { console.log('mongoose connection error: ' + err); }
     else { console.log('mongoose connected'); }
 });
