@@ -1,4 +1,4 @@
-Pinterest clone written by David Mason for FreeCodeCamp (https://www.freecodecamp.com/djmot).
+Pinterest clone written for FreeCodeCamp (https://www.freecodecamp.com/djmot).
 
 User Story: As an unauthenticated user, I can login with Twitter.
 
